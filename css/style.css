@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
+}
+
+div.wrapper {
+    clear: both;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#header {
+    background-image: url("/abi/img/header_fill.jpg");
+    background-repeat: repeat-x;
+    height: 170px;
+}
+
+#header img {
+    float: left;
+}
+
+#header ul {
+    float: right;
+    margin-top: 125px;
+    list-style-type: none;
+}
+
+#header ul li {
+    float: left;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 5px 8px;
+}
+
+#header ul li.current {
+    background-color: #423dff;
+    -moz-border-radius: 5px;
+}
+
+#header ul li a {
+    color: #170a00;
+    text-decoration: none;
+}
+
+#header ul li a:hover {
+    color: white;
+}
