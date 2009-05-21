@@ -1,41 +1,43 @@
 body {
     margin: 0;
     padding: 0;
-    font: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
+    font-family: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
+    font-size: 14px;
+    background-color: #b7b75d;
 }
 
 div.wrapper {
     clear: both;
     margin: 0 auto;
-    width: 1000px;
+    max-width: 1000px;
 }
 
 #header {
-    background-image: url("/abi/img/header_fill.jpg");
     background-repeat: repeat-x;
     height: 170px;
+    min-width: 1000px;
 }
 
-#header img {
-    float: left;
-}
+#header img { float: left; }
 
 #header ul {
-    float: right;
-    margin-top: 125px;
     list-style-type: none;
+    margin-top: 30px;
+    float: right;
 }
 
 #header ul li {
     float: left;
-    font-size: 19px;
+    font-size: 14px;
     font-weight: bold;
     padding: 5px 8px;
+    margin: 0 5px;
 }
 
 #header ul li.current {
     background-color: #423dff;
-    -moz-border-radius: 5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 #header ul li a {
@@ -43,6 +45,33 @@ div.wrapper {
     text-decoration: none;
 }
 
-#header ul li a:hover {
-    color: white;
+#header ul li a:hover { color: white; }
+
+#quote {
+    padding-top: 30px;
+    height: 70px;
+    font-size: 14px;
+    font-style: italic;
 }
+
+#quote a { color: #170a00; }
+
+#main {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffbe;
+    border: 1px dashed #5dd244;
+    text-align: justify;
+}
+
+div.author {
+    text-align: right;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+h2.page-title { margin-bottom: 0; }
+h2.page-title + hr { margin-bottom: 25px; }
+
+#widgets { float: right; margin-top: 10px; }
+#widgets a { margin: 5px; }

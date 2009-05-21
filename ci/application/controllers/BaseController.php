@@ -19,7 +19,14 @@ class BaseController extends Controller
   {
     $this->load->helper('html');
     $this->load->helper('url');
-    $this->slots['pagelinks'] = array('blog' => 'Blog', 'projects' => 'Projects', 'about' => 'About',);
+    $this->slots['pagelinks'] = array('blog' => 'Blog',
+                                      'projects' => 'Projects',
+                                      'quotes' => 'Quotes',
+                                      'links' => 'Links',
+                                      'about' => 'About');
+
+    $this->load->model('quote');
+    $this->slots['quote'] = $this->quote->get_random_quote();
     $this->load->view('skeleton', $this->slots);
   }
 }
