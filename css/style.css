@@ -9,13 +9,15 @@ body {
 div.wrapper {
     clear: both;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 82%;
 }
 
 #header {
     background-repeat: repeat-x;
     height: 170px;
+    width: 100%;
     min-width: 1000px;
+    margin: auto;
 }
 
 #header img { float: left; }
@@ -51,17 +53,21 @@ div.wrapper {
     padding-top: 30px;
     height: 70px;
     font-size: 14px;
-    font-style: italic;
+    text-align: right;
 }
 
+#quote div { margin: 0px; }
+#quote div.author { margin-top: 8px; }
 #quote a { color: #170a00; }
 
 #main {
+    margin: auto;
     margin-top: 20px;
     padding: 20px;
     background-color: #ffffbe;
     border: 1px dashed #5dd244;
     text-align: justify;
+    width: 78%;
 }
 
 div.author {
@@ -70,8 +76,15 @@ div.author {
     margin-top: 20px;
 }
 
+#main div.author { margin-bottom: 20px }
+
 h2.page-title { margin-bottom: 0; }
 h2.page-title + hr { margin-bottom: 25px; }
 
-#widgets { float: right; margin-top: 10px; }
+#widgets { float: right; }
 #widgets a { margin: 5px; }
+
+#quotes { list-style: none; }
+#quotes li { margin-bottom: 18px; }
+#quotes div.author { margin: 0px; }
+#quotes hr { color: silver; }
