@@ -18,6 +18,7 @@ div.wrapper {
     width: 100%;
     min-width: 1000px;
     margin: auto;
+    border-bottom: 3px ridge silver;
 }
 
 #header img { float: left; }
@@ -38,27 +39,32 @@ div.wrapper {
 
 #header ul li.current {
     background-color: #423dff;
+    background-color: #343434;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
 
 #header ul li a {
-    color: #170a00;
+    color: #207020;
     text-decoration: none;
 }
 
 #header ul li a:hover { color: white; }
 
-#quote {
-    padding-top: 30px;
-    height: 70px;
+#quote tr {
+    font-weight: bold;
+    height: 100px;
     font-size: 14px;
     text-align: right;
+    color: #ffffb3;
 }
 
 #quote div { margin: 0px; }
-#quote div.author { margin-top: 8px; }
-#quote a { color: #170a00; }
+#quote div.author {
+    margin-top: 8px;
+    font-weight: normal;
+}
+#quote a { color: #ffffb3; }
 
 #main {
     margin: auto;
@@ -83,8 +89,3 @@ h2.page-title + hr { margin-bottom: 25px; }
 
 #widgets { float: right; }
 #widgets a { margin: 5px; }
-
-#quotes { list-style: none; }
-#quotes li { margin-bottom: 18px; }
-#quotes div.author { margin: 0px; }
-#quotes hr { color: silver; }

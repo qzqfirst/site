@@ -4,16 +4,19 @@
   <head>
     <title><?php echo $title; ?> | Abesto's woes</title>
     <meta name="Content-Type" content="text/html; charset=UTF-8" />
-    <?php echo link_tag("css/style.css"); ?>
+    <?php echo link_tag("css/style.css")."\n"; ?>
+<?php if (isset($style)): ?>
+    <?php echo link_tag("css/".$nav)."\n"; ?>
+<?php endif; ?>
   </head>
   <body>
     <div id="header" style="background-image: url('<?php echo site_url("img/header_fill.jpg"); ?>')">
     <div style="width: 1000px; margin: auto">
       <?php echo img(array('src' => 'img/header.jpg', 'alt' => 'Abesto\'s woes'))."\n"; ?>
-      <div id="quote">
+      <table id="quote"><tr><td>
         <div id="text">"<?php echo $quote->text; ?>"</div>
         <div class="author">- <?php echo $quote->author; ?></div>
-      </div>
+      </td></tr></table>
       <ul>
         <?php foreach ($pagelinks as $link => $caption): ?>
         <li<?php if ($nav == $link) echo ' class="current"';?>><?php echo anchor($link, $caption); ?></li>

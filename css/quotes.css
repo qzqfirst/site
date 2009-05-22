@@ -1,0 +1,11 @@
+#quotes { list-style: none; }
+#quotes td {
+    padding: 10px;
+    text-align: justify;
+    vertical-align: top;
+}
+#quotes div.author {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+}
+#quotes hr { color: silver; }

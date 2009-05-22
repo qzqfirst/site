@@ -8,6 +8,7 @@ class Quotes extends BaseController {
                                                 array('quotes' => $this->quote->get_all_quotes()),
                                                 TRUE);
     $this->slots['nav'] = 'quotes';
+    $this->slots['style'] = true;
     $this->slots['title'] = 'Quotes';
     $this->render();
   }
