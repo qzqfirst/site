@@ -1,5 +1,3 @@
-<h2 class="page-title">Links</h2>
-<hr />
 <p>
   Allright, so I know nobody actually checks pages titled Links. Still, I
   couldn't find a better place to put all these. And longer names would break

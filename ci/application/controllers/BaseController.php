@@ -25,8 +25,8 @@ class BaseController extends Controller
                                       'links' => 'Links',
                                       'about' => 'About');
 
-    $this->load->model('quote');
-    $this->slots['quote'] = $this->quote->get_random_quote();
+    $this->load->model('quotes_model');
+    $this->slots['quote'] = $this->quotes_model->get_random_quote();
     $this->load->view('skeleton', $this->slots);
   }
 }

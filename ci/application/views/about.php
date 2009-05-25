@@ -1,5 +1,3 @@
-<h2 class="page-title">About</h2>
-<hr />
 <p>
   I'm a Hungarian student at the end of secondary school. I learned some basic
   programming in Basic (sorry) from my father about ten years ago, and I've been

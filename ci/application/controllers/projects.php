@@ -3,9 +3,12 @@ include_once('BaseController.php');
 class Projects extends BaseController {
   function index()
   {
-    $this->slots['menu'] = $this->load->view('menu', '', TRUE);
     $this->slots['nav'] = 'projects';
-    $this->slots['content'] = "Projektek, heee!";
+    $this->load->model('projects_model');
+    $projects = Array('projects' => $this->projects_model->get_projects());
+    $this->slots['content'] = $this->load->view('projects', $projects, true);
+    $this->slots['title'] = 'Projects';
+    $this->slots['style'] = 'projects';
     $this->render();
   }
 }

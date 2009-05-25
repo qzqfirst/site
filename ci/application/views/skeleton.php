@@ -6,7 +6,11 @@
     <meta name="Content-Type" content="text/html; charset=UTF-8" />
     <?php echo link_tag("css/style.css")."\n"; ?>
 <?php if (isset($style)): ?>
-    <?php echo link_tag("css/".$nav)."\n"; ?>
+    <?php echo link_tag("css/".$nav.".css")."\n"; ?>
+<?php endif; ?>
+<?php if ($nav == 'projects'):?>
+    <script type="text/javascript" src="<?php echo site_url('script/jquery-1.3.2.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('script/projects.js'); ?>"></script>
 <?php endif; ?>
   </head>
   <body>
@@ -18,13 +22,18 @@
         <div class="author">- <?php echo $quote->author; ?></div>
       </td></tr></table>
       <ul>
-        <?php foreach ($pagelinks as $link => $caption): ?>
+<?php foreach ($pagelinks as $link => $caption): ?>
         <li<?php if ($nav == $link) echo ' class="current"';?>><?php echo anchor($link, $caption); ?></li>
-        <?php endforeach; ?>
+<?php endforeach; ?>
       </ul>
     </div>
   </div>
   <div id="main">
+    <div id="contact">
+      Contact: abesto0.at.gmail.com
+    </div>
+    <h2 class="page-title"><?php echo $title; ?></h2>
+    <hr />
 <!-- Main content -->
 <?php echo $content ?>
 <!--End of main content -->
@@ -41,7 +50,14 @@
              src="http://jigsaw.w3.org/css-validator/images/vcss"
              alt="Valid CSS!" />
       </a>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/hu/">
+        <img alt="Creative Commons License" style="border-width:0"
+             src="http://i.creativecommons.org/l/by-nc-sa/2.5/hu/88x31.png" />
+      </a>
     </div>
+  </div>
+  <div id="license">
+    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/hu/">Creative Commons Attribution-Noncommercial-Share Alike 2.5 Hungary License</a>.
   </div>
 </body>
 </html>

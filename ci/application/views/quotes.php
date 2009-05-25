@@ -1,5 +1,3 @@
-<h2 class="page-title">Quotes</h2>
-<hr />
 <p>
   Here's a list of the quotes that keep appearing up in the header. In case you
   liked one and can't remember it exactly.
@@ -13,9 +11,12 @@
     <td>"<?php echo $quote->text; ?>"
       <div class="author">&mdash; <?php echo $quote->author; ?></div>
     </td>
-<?php if ($col == 2): $col = 0; ?>
+<?php $col++; ?>
+<?php if ($col == 3): $col = 0; ?>
   </tr>
 <?php endif; ?>
-<?php $col++; ?>
 <?php endforeach; ?>
+<?php if ($col != 3): ?>
+  </tr>
+<?php endif; ?>
 </table>
