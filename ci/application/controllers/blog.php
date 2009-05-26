@@ -12,6 +12,7 @@ class Blog extends BaseController {
 
   function index()
   {
+    $this->slots['title'] = "Recent posts";
     $posts = $this->blog_model->get_first(4);
     $this->slots['content'] = '';
     foreach ($posts as $post)
@@ -28,6 +29,7 @@ class Blog extends BaseController {
 
   function tag($tag)
   {
+    $this->slots['title'] = "Posts tagged '$tag'";
     $posts = $this->blog_model->get_posts_by_tag($tag);
     $this->slots['content'] = '';
     foreach ($posts as $post)

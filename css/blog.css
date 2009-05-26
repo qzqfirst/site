@@ -1,9 +1,20 @@
-h2 { margin-bottom: 0; }
-#main h2 a {
+#main h2 + hr { margin-bottom: 2px;}
+#main h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#main h3 a {
     color: black;
     text-decoration: underline;
 }
-#main h2 a:hover { color: #333; }
+#main h3 a:hover { color: #333; }
+
+div.short-post {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    background-color: #eeeead;
+    padding: 10px;
+}
 
 div.date, div.tags {
     color: #333;

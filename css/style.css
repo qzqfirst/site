@@ -93,7 +93,6 @@ div.author {
 #main div.author { margin-bottom: 20px }
 
 h2.page-title {
-    font-family: monospace;
     margin-top: 0;
     margin-bottom: 0;
     float: left;
@@ -102,12 +101,6 @@ h2.page-title + hr {
     margin-bottom: 25px;
     clear: both;
 }
-h3 {
-    font-family: monospace;
-    font-variant: small-caps;
-    font-size: 17px;
-}
-
 #widgets { float: right; }
 #widgets a { margin: 5px; }
 

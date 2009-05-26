@@ -1,5 +1,4 @@
 <?php include("permalink.php"); ?>
-<h2><?php echo anchor($permalink, $title); ?></h2>
 <div class="date">Published: <span><?php echo $date; ?></span></div>
 
 <div class="tags">
