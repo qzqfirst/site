@@ -1,4 +1,4 @@
-<div class="short-post">
+<div class="post">
 <?php include("permalink.php"); ?>
 <h3><?php echo anchor($permalink, $title); ?></h3>
 <?php include('post_header.php'); ?>
@@ -6,5 +6,5 @@
 echo $short_text;
 if ($more == true)
   echo anchor($permalink.'#more', 'Read more...'); ?>
-<div class="comments"><?php echo sizeof($comments); ?> comments</div>
+<!--<div class="comments"><?php echo sizeof($comments); ?> comments</div>-->
 </div>

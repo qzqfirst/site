@@ -2,8 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
-    font-size: 14px;
-    background-color: #b7b75d;
+    background-color: #acac75;
 }
 
 div.wrapper {
@@ -74,6 +73,8 @@ div.wrapper {
     text-align: justify;
     width: 78%;
 }
+
+#main div { font-size: 13px; }
 
 #main a {
     color: #090;

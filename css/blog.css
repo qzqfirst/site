@@ -9,11 +9,44 @@
 }
 #main h3 a:hover { color: #333; }
 
-div.short-post {
-    margin-top: 25px;
-    margin-bottom: 10px;
-    background-color: #eeeead;
-    padding: 10px;
+#main > table td {
+    vertical-align: top;
+}
+
+#posts > div { margin-right: 25px; }
+
+div.post {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    background-color: #f6f6b3;
+    padding: 17px;
+    text-align: justify;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+#sideboxes { padding-top: 30px; }
+
+div.box {
+    border: 1px solid green;
+    margin-bottom: 50px;
+    background-color: #fbfbb8;
+    font-size: 13px;
+}
+
+#sideboxes div.box table tr td {
+    font-size: 13px;
+    padding-left: 5px;
+}
+#sideboxes div.box table tr td:first-child { width: 100%; }
+#sideboxes div.box table { padding: 5px; }
+
+div.box h3 {
+    text-align: center;
+    border: 3px outset silver;
+    background-color: #e4e4a1;
+    padding: 3px;
+    font-variant: small-caps;
 }
 
 div.date, div.tags {

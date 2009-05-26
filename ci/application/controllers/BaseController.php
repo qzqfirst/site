@@ -15,7 +15,7 @@ class BaseController extends Controller
     $this->slots = array();
   }
 
-  public function render()
+  public function render($return=false)
   {
     $this->load->helper('html');
     $this->load->helper('url');
@@ -27,7 +27,7 @@ class BaseController extends Controller
 
     $this->load->model('quotes_model');
     $this->slots['quote'] = $this->quotes_model->get_random_quote();
-    $this->load->view('skeleton', $this->slots);
+    return $this->load->view('skeleton', $this->slots, $return);
   }
 }
 ?>
