@@ -32,8 +32,10 @@
     <div id="contact">
       Contact: abesto0.at.gmail.com
     </div>
+<?php if ($nav != 'blog'): ?>
     <h2 class="page-title"><?php echo $title; ?></h2>
     <hr />
+<?php endif; ?>
 <!-- Main content -->
 <?php echo $content ?>
 <!--End of main content -->

@@ -35,7 +35,7 @@
 |
 | This route lets you set a "secret" word that will trigger the
 | scaffolding feature for added security. Note: Scaffolding must be
-| enabled in the controller in which you intend to use it.   The reserved 
+| enabled in the controller in which you intend to use it.   The reserved
 | routes must come before any wildcard or regular expression routes.
 |
 */
@@ -43,6 +43,6 @@
 $route['default_controller'] = "about";
 $route['scaffolding_trigger'] = "";
 
-
+$route['blog/:num/:num/:num/(:any)'] = "blog/post/$1";
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

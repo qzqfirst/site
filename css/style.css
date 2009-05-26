@@ -68,12 +68,21 @@ div.wrapper {
 #main {
     margin: auto;
     margin-top: 20px;
-    padding: 20px;
+    padding: 20px 50px;
     background-color: #ffffbe;
     border: 1px dashed #5dd244;
     text-align: justify;
     width: 78%;
 }
+
+#main a {
+    color: #090;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+#main a:hover { text-decoration: underline; }
 
 div.author {
     text-align: right;
@@ -84,6 +93,7 @@ div.author {
 #main div.author { margin-bottom: 20px }
 
 h2.page-title {
+    font-family: monospace;
     margin-top: 0;
     margin-bottom: 0;
     float: left;
@@ -91,6 +101,11 @@ h2.page-title {
 h2.page-title + hr {
     margin-bottom: 25px;
     clear: both;
+}
+h3 {
+    font-family: monospace;
+    font-variant: small-caps;
+    font-size: 17px;
 }
 
 #widgets { float: right; }

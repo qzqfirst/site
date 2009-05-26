@@ -1,0 +1,79 @@
+h2 { margin-bottom: 0; }
+#main h2 a {
+    color: black;
+    text-decoration: underline;
+}
+#main h2 a:hover { color: #333; }
+
+div.date, div.tags {
+    color: #333;
+    font-size: 12px;
+}
+
+div.tags {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#main div.tags a { color: black; }
+
+ul.tags li { float: left; }
+
+h3 { margin-bottom: 8px }
+h3 + p { margin-top: 0}
+p { margin: 5px 0 }
+
+span.update { font-weight: bold; }
+
+dt { font-weight: bold; }
+dd { margin-bottom: 8px; }
+
+/* Emacs htmlize CSS */
+/* Colortheme: Robin Hood */
+pre {
+    color: #ffdead;
+    background-color: #304020;
+    padding: 10px;
+    border: 1px dashed #ddd;
+}
+pre .builtin {
+    /* font-lock-builtin-face */
+    color: #98fb98;
+    font-weight: bold;
+}
+pre .comment, pre .comment-delimiter {
+    /* font-lock-comment-face */
+    color: #add8e6;
+}
+pre .function-name {
+    /* font-lock-function-name-face */
+    color: #7fffd4;
+    font-weight: bold;
+}
+pre .keyword {
+    /* font-lock-keyword-face */
+    color: #fa8072;
+}
+pre .string {
+    /* font-lock-string-face */
+    color: #ffa07a;
+}
+pre .type {
+    /* font-lock-type-face */
+    color: #9acd32;
+    font-weight: bold;
+}
+pre .variable-name {
+    /* font-lock-variable-name-face */
+    color: #7fffd4;
+    font-weight: bold;
+}
+pre a {
+    color: inherit;
+    background-color: inherit;
+    font: inherit;
+    text-decoration: inherit;
+}
+pre a:hover {
+    text-decoration: underline;
+}

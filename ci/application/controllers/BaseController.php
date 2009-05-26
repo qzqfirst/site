@@ -9,9 +9,9 @@
 
 class BaseController extends Controller
 {
-  public function __constructor()
+  public function __construct()
   {
-    parent::__constructor();
+    parent::__construct();
     $this->slots = array();
   }
 
