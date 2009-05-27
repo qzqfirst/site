@@ -5,7 +5,7 @@
 </p>
 <ul>
   <li><a target="_blank" href="http://github.com/abesto/dotfiles/tree/master">Dotfiles at GitHub</a></li>
-  <li><a target="_blank" href="http://github.com/abesto/site/tree/master">This site at GitHub</a></li>
+  <li><a target="_blank" href="http://github.com/abesto/site/tree/master">This site at GitHub</a> (license applies)</li>
   <li><a target="_blank" href="http://sivland.s1.jcink.com/s/host/sivland/ADOI/">Ancient Domains of Insanity</a></li>
   <li><a target="_blank" href="http://www.emacsblog.org/">M-x all-things-emacs</a></li>
   <li><a target="_blank" href="http://slashdot.com/">Slashdot</a></li>

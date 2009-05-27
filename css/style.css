@@ -67,11 +67,12 @@ div.wrapper {
 #main {
     margin: auto;
     margin-top: 20px;
-    padding: 20px 50px;
+    padding: 20px 30px;
     background-color: #ffffbe;
     border: 1px dashed #5dd244;
     text-align: justify;
-    width: 78%;
+    width: 80%;
+    font-size: 13px;
 }
 
 #main div { font-size: 13px; }

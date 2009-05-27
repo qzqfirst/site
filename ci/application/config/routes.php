@@ -43,7 +43,7 @@
 $route['default_controller'] = "about";
 $route['scaffolding_trigger'] = "";
 
-$route['blog/:num/:num/:num/(:any)'] = "blog/post/$1";
+$route['blog/:num/:num/(:any)'] = "blog/post/$1";
 $route['blog/(:num/:num)'] = "blog/date/$1";
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

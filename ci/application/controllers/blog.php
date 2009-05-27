@@ -24,7 +24,7 @@ class Blog extends BaseController {
   function post($title)
   {
     $post = $this->blog_model->get_post($title);
-    $this->slots['posts'] = $this->load->view('post_long', $post, true);
+    $this->slots['posts'] = $this->load->view('blog/post_long', $post, true);
     $this->render();
   }
 
@@ -48,13 +48,13 @@ class Blog extends BaseController {
   {
     $this->slots['posts'] = '';
     foreach ($result as $post)
-      $this->slots['posts'] .= $this->load->view('post_short', $post, true);
+      $this->slots['posts'] .= $this->load->view('blog/post_short', $post, true);
   }
 
 
   function render()
   {
-    $this->slots['content'] = $this->load->view('blog_skeleton', $this->slots, true);
+    $this->slots['content'] = $this->load->view('blog/skeleton', $this->slots, true);
     parent::render();
   }
 }

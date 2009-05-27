@@ -60,6 +60,7 @@ class Blog_model extends Model {
   {
     $this->db->select("COUNT(`title`) AS c, DATE_FORMAT(`date`, '%M, %Y') AS label, DATE_FORMAT(`date`, '%Y/%m') AS url", false);
     $this->db->from('posts')->group_by("EXTRACT(YEAR_MONTH FROM `date`)");
+    $this->db->order_by('date', 'desc');
     return $this->db->get()->result();
   }
 
@@ -67,7 +68,7 @@ class Blog_model extends Model {
   {
     $this->db->select('name')->from('posts');
     $this->db->join('tags_join', 'posts.id = tags_join.post_id')->join('tags', 'tags_join.tag_id = tags.id');
-    $this->db->where('posts.id', $post['id']);
+    $this->db->where('posts.id', $post['id'])->order_by('tags.name');
     $post['tags'] = $this->db->get()->result_array();
     $post['comments'] = array();
   }
