@@ -21,9 +21,14 @@ class Blog extends BaseController {
     $this->render();
   }
 
-  function post($title)
+  function post($title, $errors='')
   {
+    session_start();
     $post = $this->blog_model->get_post($title);
+    $post['errors'] = $_SESSION['errors'];
+    $post['set'] = $_SESSION['set'];
+    $this->load->helper(array('form', 'url'));
+    $this->load->library('form_validation');
     $this->slots['posts'] = $this->load->view('blog/post_long', $post, true);
     $this->render();
   }
@@ -42,6 +47,27 @@ class Blog extends BaseController {
     $posts = $this->blog_model->get_posts_by_date($year, $month);
     $this->_post_list($posts);
     $this->render();
+  }
+
+  function comment()
+  {
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('user', 'Name', 'trim|required|min_length[3]|max_length[50]');
+    $this->form_validation->set_rules('url', 'Url', 'trim|max_length[300]|prep_url');
+    $this->form_validation->set_rules('message', 'Message', 'trim|required|max_length[500]');
+
+    session_start();
+    $_SESSION['set'] = array('user'    => $this->input->post('user'),
+                             'url'     => $this->input->post('url'),
+                             'message' => $this->input->post('message'),
+                             'title'   => $this->input->post('post'));
+
+    if ($this->form_validation->run()) {
+      $this->blog_model->post_comment($_SESSION['set']);
+      $_SESSION['set']['message'] = '';
+    }
+    $_SESSION['errors'] = validation_errors();
+    redirect($this->input->post('post').'#post-comment');
   }
 
   function _post_list($result)

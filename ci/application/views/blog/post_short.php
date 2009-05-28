@@ -5,6 +5,6 @@
 <?php
 echo $short_text;
 if ($more == true)
-  echo anchor($permalink.'#more', 'Read more...'); ?>
-<!--<div class="comments"><?php echo sizeof($comments); ?> comments</div>-->
+  echo '<span class="more">'.anchor($permalink.'#more', 'Read more...').'</span>'; ?>
+<span class="comments"><?php echo anchor($permalink.'#comments', sizeof($comments)." comments"); ?></span>
 </div>

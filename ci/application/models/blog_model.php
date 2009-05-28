@@ -64,13 +64,43 @@ class Blog_model extends Model {
     return $this->db->get()->result();
   }
 
+  function post_comment($data)
+  {
+    $title = explode('/', $data['title']);
+    $title = $title[sizeof($title)-1];
+    $id = $this->db->select('id')->from('posts')->where('url_title', $title)->get()->row()->id;
+    $this->db->insert('comments', array('post_id' => $id,
+                                        'name' => $data['user'],
+                                        'url'  => $data['url'],
+                                        'time' => date("Y-m-d H:i:s"),
+                                        'text' => $this->process_message($data['message'])));
+  }
+
+  function process_message($str)
+  {
+    $code = false;
+    $new = '';
+    foreach (explode("\n", $str) as $line) {
+      if ((preg_match('[code]', $line) === 1) && (!$code)) {
+        $line = str_replace('[code]', '<pre>', $line);
+        $code = true;
+      } else if ((preg_match('[/code]', $line) === 1) && ($code)) {
+        $line = str_replace('[/code]', '</pre>', $line);
+        $code = false;
+      }
+      $new .= $line . "\n";
+      if (!$code) $new .= "<br />";
+    }
+    return $new;
+  }
+
   function _get_details(&$post)
   {
     $this->db->select('name')->from('posts');
     $this->db->join('tags_join', 'posts.id = tags_join.post_id')->join('tags', 'tags_join.tag_id = tags.id');
     $this->db->where('posts.id', $post['id'])->order_by('tags.name');
     $post['tags'] = $this->db->get()->result_array();
-    $post['comments'] = array();
+    $this->db->from('comments')->where('post_id', $post['id'])->order_by('time', 'asc');
+    $post['comments'] = $this->db->get()->result_array();
   }
 }
-?>
