@@ -40,7 +40,7 @@
 |
 */
 
-$route['default_controller'] = "about";
+$route['default_controller'] = "blog";
 $route['scaffolding_trigger'] = "";
 
 $route['blog/:num/:num/(:any)'] = "blog/post/$1";

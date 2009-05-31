@@ -1,4 +1,28 @@
-#main h2 + hr { margin-bottom: 2px;}
+#main h2 + hr { margin-bottom: 2px }
+
+#main a.feed {
+    float: right;
+    position: relative;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: -21px;
+    color: black;
+}
+
+#main a.feed:hover {
+    background-color: white;
+    text-decoration: none;
+}
+
+#main a.feed img {
+    text-decoration: none;
+    border: 0;
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+#main a.feed + * {  clear: both; }
+
 #main h3 {
     margin-top: 0;
     margin-bottom: 0;
@@ -66,7 +90,7 @@ ul.tags li { float: left; }
 
 h3 { margin-bottom: 8px }
 h3 + p { margin-top: 0}
-p { margin: 5px 0 }
+p { margin: 10px 0 }
 
 span.update { font-weight: bold; }
 

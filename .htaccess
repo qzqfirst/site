@@ -1,3 +1,3 @@
 RewriteEngine on
-RewriteCond $1 !^(index\.php|img|css|script|robots\.txt)
+RewriteCond $1 !^(index\.php|img|css|script|form)
 RewriteRule ^(.*)$ /abi/index.php/$1 [L]

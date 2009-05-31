@@ -4,6 +4,7 @@
   <head>
     <title><?php echo $title; ?> | Abesto's woes</title>
     <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="A way too serious blog on web development and Linux" />
     <?php echo link_tag("css/style.css")."\n"; ?>
 <?php if (isset($style)): ?>
     <?php echo link_tag("css/".$nav.".css")."\n"; ?>
@@ -34,6 +35,9 @@
     </div>
     <h2 class="page-title"><?php echo $title; ?></h2>
     <hr />
+<?php if ($nav == 'blog'): ?>
+    <a href="/rss" class="feed"><span>RSS 2.0</span><?php echo img("img/rss.gif"); ?></a>
+<?php endif; ?>
 <!-- Main content -->
 <?php echo $content ?>
 <!--End of main content -->

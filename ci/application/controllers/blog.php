@@ -25,9 +25,18 @@ class Blog extends BaseController {
   {
     session_start();
     $post = $this->blog_model->get_post($title);
+    if (!isset($_SESSION['errors']))
+      $_SESSION['errors'] = '';
     $post['errors'] = $_SESSION['errors'];
+
+    if (!isset($_SESSION['set']))
+      $_SESSION['set'] = array('user'    => '',
+                               'url'     => '',
+                               'message' => '',
+                               'title'   => '',
+                               'url'     => '');
     $post['set'] = $_SESSION['set'];
-    $this->load->helper(array('form', 'url'));
+
     $this->load->library('form_validation');
     $this->slots['posts'] = $this->load->view('blog/post_long', $post, true);
     $this->render();

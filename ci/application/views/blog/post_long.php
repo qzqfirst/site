@@ -29,9 +29,9 @@ if ($more == true): ?>
  echo form_open('blog/comment', '', array('post' => uri_string()));
  echo "Name: " . form_input('user', $set['user']) . "<br />";
  echo "Url (optional): " . form_input('url', $set['url']) . "<br />";
- echo "Message (max. 500 characters):";
+ echo "Message (max. 500 characters):<br />";
  echo form_textarea(array('name' => 'message', 'cols' => '60', 'value' => $set['message'])) . "<br />";
-echo "[code] and [/code] will be converted to &lt;pre&gt; and &lt;/pre&gt; tags. If you paste the output of Emacs htmlize between them, the code will be highlighted.<br />";
+echo "[code] and [/code] will be converted to &lt;pre&gt; and &lt;/pre&gt; tags.<br />";
  echo form_submit('submit', 'Post comment');
  echo form_close();
 ?>

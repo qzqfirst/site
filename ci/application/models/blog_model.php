@@ -8,7 +8,7 @@ class Blog_model extends Model {
 
   function get_first($limit)
   {
-    $this->db->select('id, title, date, short_text, more')->from('posts')->order_by('date', 'desc')->limit($limit);
+    $this->db->from('posts')->order_by('date', 'desc')->limit($limit);
     $posts = $this->db->get()->result_array();
     for ($i = 0; $i < sizeof($posts); $i++)
       $this->_get_details($posts[$i]);
@@ -78,18 +78,19 @@ class Blog_model extends Model {
 
   function process_message($str)
   {
-    $code = false;
+    $code = 0;
     $new = '';
     foreach (explode("\n", $str) as $line) {
-      if ((preg_match('[code]', $line) === 1) && (!$code)) {
+      if ((preg_match('[code]', $line) === 1) && ($code == 0)) {
         $line = str_replace('[code]', '<pre>', $line);
-        $code = true;
+        $code = 1;
       } else if ((preg_match('[/code]', $line) === 1) && ($code)) {
         $line = str_replace('[/code]', '</pre>', $line);
-        $code = false;
+        $code = 2;
       }
       $new .= $line . "\n";
-      if (!$code) $new .= "<br />";
+      if ($code == 0) $new .= "<br />";
+      if ($code == 2) $code = 0;
     }
     return $new;
   }

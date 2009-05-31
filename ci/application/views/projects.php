@@ -17,17 +17,10 @@ foreach ($list as $proj): ?>
   hidden to make the page easier to read. Clicking on a project name will
   show you the details.
 </p>
-
+<?php display_projects($projects['np']); ?>
 <h3>Private</h3>
 <p>
   These are usually more interesting than useful. They mostly work, but the were
   just a way to try out an idea or learn something new.
 </p>
 <?php display_projects($projects['p']); ?>
-
-<h3>Work</h3>
-<p>
-  These are the real projects. You could call them my portfolio. I wouldn't like
-  you to, because I don't like big words, but you could.
-</p>
-<?php display_projects($projects['np']); ?>
