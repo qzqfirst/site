@@ -5,6 +5,7 @@
     </td>
     <td id="sideboxes">
       <div class="box" id="tags">
+<?php if (sizeof($tags) > 0): ?>
         <h3>Tags</h3>
         <table>
 <?php foreach($tags as $tag):?>
@@ -14,6 +15,7 @@
           </tr>
 <?php endforeach; ?>
         </table>
+<?php endif; ?>
       </div>
       <div class="box" id="archive">
         <h3>Archive</h3>

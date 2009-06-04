@@ -25,7 +25,7 @@ echo '<?xml version="1.0" encoding="utf-8"\?\>' . "\n";
     $title = $entry['title'];
     include('permalink.php');
 ?>
-<item>
+    <item>
       <title><?php echo xml_convert($entry['title']); ?></title>
       <link><?php echo $permalink; ?></link>
       <guid><?php echo $permalink; ?></guid>

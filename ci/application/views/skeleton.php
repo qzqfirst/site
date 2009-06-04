@@ -36,7 +36,7 @@
     <h2 class="page-title"><?php echo $title; ?></h2>
     <hr />
 <?php if ($nav == 'blog'): ?>
-    <a href="/rss" class="feed"><span>RSS 2.0</span><?php echo img("img/rss.gif"); ?></a>
+    <a href="/rss" class="feed"><span>RSS 2.0</span><?php echo img(array('src' => "img/rss.gif", 'alt' => "RSS 2.0 feed")); ?></a>
 <?php endif; ?>
 <!-- Main content -->
 <?php echo $content ?>
