@@ -74,6 +74,24 @@ class Blog_model extends Model {
                                         'url'  => $data['url'],
                                         'time' => date("Y-m-d H:i:s"),
                                         'text' => $this->process_message($data['message'])));
+
+    include('mail_settings.php');
+
+    $this->load->library('email', array('protocol' => 'smtp',
+                                        'smtp_host' => 'ssl://smtp.gmail.com',
+                                        'smtp_port' => 465,
+                                        'smtp_user' => GMAIL_USER,
+                                        'smtp_pass' => GMAIL_PASS,
+                                        'smtp_timeout' => 10));
+
+    $this->email->set_newline("\r\n");
+    $this->email->from('comment.abesto@gmail.com', $data['user']);
+    $this->email->to('abesto0@gmail.com');
+
+    $this->email->subject('Blog comment');
+    $this->email->message($data['message']."\n\n\nURL: ".base_url().$data['title']);
+
+    $this->email->send();
   }
 
   function process_message($str)

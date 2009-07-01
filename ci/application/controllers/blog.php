@@ -63,13 +63,14 @@ class Blog extends BaseController {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('user', 'Name', 'trim|required|min_length[3]|max_length[50]');
     $this->form_validation->set_rules('url', 'Url', 'trim|max_length[300]|prep_url');
-    $this->form_validation->set_rules('message', 'Message', 'trim|required|max_length[500]');
+    $this->form_validation->set_rules('message', 'Message', 'trim|required');
 
     session_start();
     $_SESSION['set'] = array('user'    => $this->input->post('user'),
                              'url'     => $this->input->post('url'),
                              'message' => $this->input->post('message'),
                              'title'   => $this->input->post('post'));
+
 
     if ($this->form_validation->run()) {
       $this->blog_model->post_comment($_SESSION['set']);
