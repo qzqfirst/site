@@ -14,6 +14,10 @@
   techno and all the similar stuff I don't know the proper name of.
 </p>
 <p>
+  This site is <em>about</em> computing, so the rest of this <em>About</em> will
+  be <em>about</em> that as well.
+</p>
+<p>
   The above-mentioned Internet connection was followed shortly by a switch to
   Ubuntu, and lately to Arch Linux. That was a really defining experience - if
   nothing else, it defined my working environment (yeah, that was a joke. I'm not

@@ -1,4 +1,5 @@
-<?xml version="1.1" encoding="utf-8" ?>
+<?php ob_start(); ?>
+<?php echo '<?xml version="1.1" encoding="utf-8" ?>' . "\n" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu">
   <head>
@@ -29,6 +30,7 @@
       </ul>
     </div>
   </div>
+<?php ob_end_flush(); ob_start(); ?>
   <div id="main">
     <div id="contact">
       Contact: abesto0.at.gmail.com
@@ -59,9 +61,14 @@
              src="http://i.creativecommons.org/l/by-nc-sa/2.5/hu/88x31.png" />
       </a>
     </div>
+    <a href="http://feedvalidator.org/check.cgi?url=http%3A//abesto.host22.com/rss">
+      <img src="/img/valid-rss.png" alt="[Valid RSS]" title="Validate my RSS feed" />
+    </a>
   </div>
   <div id="license">
-    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/hu/">Creative Commons Attribution-Noncommercial-Share Alike 2.5 Hungary License</a>.
+    This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/hu/">Creative Commons Attribution-Noncommercial-Share Alike 2.5 Hungary License</a>.<br />
+    Page generated in <?php echo microtime() - $time; ?> seconds
   </div>
 </body>
 </html>
+<?php ob_end_flush(); ?>

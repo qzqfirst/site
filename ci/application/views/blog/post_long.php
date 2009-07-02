@@ -15,7 +15,7 @@ if ($more == true): ?>
 <div class="box comment">
   <span class="author"> <?php echo empty($comment['url']) ? $comment['name'] : anchor($comment['url'], $comment['name']); ?> </span>
   <p><?php echo $comment['text']; ?></p>
-  <div class="date"><?php echo $comment['time'];?></div>
+  <div class="date"><?php echo $comment['time'];?> -0700</div>
 </div>
 <?php endforeach; ?>
 <div id="post-comment">

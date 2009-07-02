@@ -11,11 +11,12 @@ class BaseController extends Controller
 {
   public function __construct()
   {
+    $time = microtime();  
     parent::__construct();
-    $this->slots = array();
+    $this->slots = array('time' => $time);
   }
 
-  public function render($return=false)
+  protected function render($return=false)
   {
     $this->load->helper('html');
     $this->load->helper('url');

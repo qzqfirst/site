@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://abesto.000space.com/";
+$config['base_url']	= "http://abesto.host22.com/";
 
 /*
 |--------------------------------------------------------------------------
