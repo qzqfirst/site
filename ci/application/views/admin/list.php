@@ -1,6 +1,6 @@
 <?php
 foreach ($posts as $post)
-  $table->add_row(anchor('admin/post/'.$post['id'], $post['title']), $post['date']);
+  $table->add_row(anchor('admin/post/'.$post['id'], $post['title']), $post['published']);
 $table->set_heading('Title', 'Published');
 echo $table->generate();
 echo '<p>'.anchor('admin/new_post', 'New Post').'</p>';

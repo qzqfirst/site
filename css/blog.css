@@ -96,11 +96,6 @@ p { margin: 10px 0 }
 #main div.long h3 {
     margin-top: 23px;
     margin-bottom: 5px;
-    counter-increment: heading;
-}
-
-#main div.long h3:before {
-    content: counter(heading) ". ";
 }
 
 span.update { font-weight: bold; }

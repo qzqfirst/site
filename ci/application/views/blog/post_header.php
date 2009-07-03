@@ -1,5 +1,5 @@
 <?php include("permalink.php"); ?>
-<div class="date">Published: <span><?php echo $date; ?></span></div>
+<div class="date">Published: <span><?php echo substr($published, 0, 10); ?></span></div>
 
 <?php if (sizeof($tags) > 0): ?>
 <div class="tags">

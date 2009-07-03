@@ -38,7 +38,7 @@
     <h2 class="page-title"><?php echo $title; ?></h2>
     <hr />
 <?php if ($nav == 'blog'): ?>
-    <a href="/rss" class="feed"><span>RSS 2.0</span><?php echo img(array('src' => "img/rss.gif", 'alt' => "RSS 2.0 feed")); ?></a>
+    <a href="http://feeds.feedburner.com/Abestos" class="feed"><span>RSS 2.0</span><?php echo img(array('src' => "img/rss.gif", 'alt' => "RSS 2.0 feed")); ?></a>
 <?php endif; ?>
 <!-- Main content -->
 <?php echo $content ?>
@@ -56,19 +56,38 @@
              src="http://jigsaw.w3.org/css-validator/images/vcss"
              alt="Valid CSS!" />
       </a>
+      <a href="http://feedvalidator.org/check.cgi?url=http%3A//abesto.host22.com/rss">
+        <img src="/img/valid-rss.png"
+             alt="[Valid RSS]"
+             style="border:0;width:88px;height:31px"
+             title="Validate my RSS feed" />
+      </a>
       <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/hu/">
         <img alt="Creative Commons License" style="border-width:0"
              src="http://i.creativecommons.org/l/by-nc-sa/2.5/hu/88x31.png" />
       </a>
     </div>
-    <a href="http://feedvalidator.org/check.cgi?url=http%3A//abesto.host22.com/rss">
-      <img src="/img/valid-rss.png" alt="[Valid RSS]" title="Validate my RSS feed" />
-    </a>
   </div>
   <div id="license">
     This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/hu/">Creative Commons Attribution-Noncommercial-Share Alike 2.5 Hungary License</a>.<br />
     Page generated in <?php echo microtime() - $time; ?> seconds
   </div>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=4874321;
+var sc_invisible=1;
+var sc_partition=57;
+var sc_click_stat=1;
+var sc_security="a94dc8c0";
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div
+class="statcounter"><a title="látogató számláló" class="statcounter"
+href="http://www.statcounter.hu/"><img class="statcounter"
+src="http://c.statcounter.com/4874321/0/a94dc8c0/1/" alt="látogató
+számláló" /></a></div></noscript>
+<!-- End of StatCounter Code -->
 </body>
 </html>
 <?php ob_end_flush(); ?>

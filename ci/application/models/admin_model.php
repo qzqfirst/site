@@ -25,8 +25,8 @@ class Admin_model extends Blog_model {
 
   function get_posts($page)
   {
-    $this->db->select('id, title, date')->from('posts')->limit(10, $page*10);
-    $this->db->order_by('date', 'desc');
+    $this->db->select('id, title, published')->from('posts')->limit(10, $page*10);
+    $this->db->order_by('published', 'desc');
     $posts = $this->db->get()->result_array();
     for ($i = 0; $i < sizeof($posts); $i++)
       $this->_get_details($posts[$i]);
@@ -49,7 +49,7 @@ class Admin_model extends Blog_model {
     // posts table
     $post = array('title'      => $data['title'],
                   'url_title'  => url_title($data['title'], 'dash', true),
-                  'date'       => $data['date'],
+                  'published'  => $data['date'] ? $data['date'] : 'UTC_TIMESTAMP()',
                   'short_text' => $data['short_text'],
                   'more_text'  => $data['more_text'],
                   'more'       => ($data['more_text'] != '')

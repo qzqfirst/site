@@ -8,7 +8,7 @@ class Blog_model extends Model {
 
   function get_first($limit)
   {
-    $this->db->from('posts')->order_by('date', 'desc')->limit($limit);
+    $this->db->select('*, UNIX_TIMESTAMP(`published`) AS unix_published')->from('posts')->order_by('published', 'desc')->limit($limit);
     $posts = $this->db->get()->result_array();
     for ($i = 0; $i < sizeof($posts); $i++)
       $this->_get_details($posts[$i]);
@@ -17,7 +17,7 @@ class Blog_model extends Model {
 
   function get_post($title)
   {
-    $this->db->from('posts')->where('url_title', $title);
+    $this->db->select('*, UNIX_TIMESTAMP(`published`) AS unix_published')->from('posts')->where('url_title', $title);
     $post = $this->db->get()->row_array();
     $this->_get_details($post);
     return $post;
@@ -32,7 +32,7 @@ class Blog_model extends Model {
     foreach($this->db->get()->result() as $row)
       $ids[] = $row->id;
 
-    $this->db->from('posts')->where_in('id', $ids)->order_by('date', 'desc');
+    $this->db->from('posts')->where_in('id', $ids)->order_by('published', 'desc');
     $posts = $this->db->get()->result_array();
     for ($i = 0; $i < sizeof($posts); $i++)
       $this->_get_details($posts[$i]);
@@ -41,7 +41,7 @@ class Blog_model extends Model {
 
   function get_posts_by_date($year, $month)
   {
-    $this->db->from('posts')->like('date', $year.'-'.$month)->order_by('date', 'desc');
+    $this->db->from('posts')->like('published', $year.'-'.$month)->order_by('published', 'desc');
     $posts = $this->db->get()->result_array();
     for ($i = 0; $i < sizeof($posts); $i++)
       $this->_get_details($posts[$i]);
@@ -58,9 +58,9 @@ class Blog_model extends Model {
 
   function get_dates()
   {
-    $this->db->select("COUNT(`title`) AS c, DATE_FORMAT(`date`, '%M, %Y') AS label, DATE_FORMAT(`date`, '%Y/%m') AS url", false);
-    $this->db->from('posts')->group_by("EXTRACT(YEAR_MONTH FROM `date`)");
-    $this->db->order_by('date', 'desc');
+    $this->db->select("COUNT(`title`) AS c, DATE_FORMAT(`published`, '%M, %Y') AS label, DATE_FORMAT(`published`, '%Y/%m') AS url", false);
+    $this->db->from('posts')->group_by("EXTRACT(YEAR_MONTH FROM `published`)");
+    $this->db->order_by('published', 'desc');
     return $this->db->get()->result();
   }
 
@@ -72,7 +72,7 @@ class Blog_model extends Model {
     $this->db->insert('comments', array('post_id' => $id,
                                         'name' => $data['user'],
                                         'url'  => $data['url'],
-                                        'time' => date("Y-m-d H:i:s"),
+                                        'time' => 'UTC_TIMESTAMP()',
                                         'text' => $this->process_message($data['message'])));
 
     include('mail_settings.php');

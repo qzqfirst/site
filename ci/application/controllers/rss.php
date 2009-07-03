@@ -7,6 +7,7 @@ class Rss extends Controller
     $this->load->model('blog_model');
     $this->load->helper('xml');
     $this->load->helper('url');
+    $this->load->helper('date');
   }
 
   function index()
@@ -26,6 +27,8 @@ class Rss extends Controller
       $entry['text'] = preg_replace("/\n\n\n*/", "\n\n", $entry['text']);
       if ($entry['more'])
         $entry['text'] .= "<p>Read the rest at Abesto's woes.</p>";
+      $triple = explode('-', $entry['published']);
+      $entry['pubdate'] = date('D, d M Y H:i:s \U\T\C', $entry['unix_published']);
       $data['posts'][] = $entry;
     }
     $this->load->view('blog/rss', $data);

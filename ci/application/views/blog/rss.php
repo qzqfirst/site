@@ -21,9 +21,10 @@ echo '<?xml version="1.0" encoding="utf-8" ?>' . "\n";
 
 <?php
   foreach($posts as $entry):
-    $date = $entry['date'];
     $title = $entry['title'];
+    $published = $entry['published'];
     include('permalink.php');
+    $published = $entry['pubdate'];
 ?>
     <item>
       <title><?php echo xml_convert($entry['title']); ?></title>
@@ -32,7 +33,7 @@ echo '<?xml version="1.0" encoding="utf-8" ?>' . "\n";
       <description><![CDATA[
       <?php echo $entry['text']; ?>
       ]]></description>
-      <pubDate><?php echo $date; ?></pubDate>
+      <pubDate><?php echo $published; ?></pubDate>
     </item>
 <?php endforeach; ?>
   </channel>

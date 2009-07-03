@@ -5,7 +5,7 @@ echo "Title: " . form_input(array(
                                   'name' => 'title',
                                   'value' => $post['title'],
                                   'size' => 50)) . "<br />\n";
-echo "Date: " . form_input('date', $post['date']) . "<br />\n";
+echo "Date: " . form_input('date', isset($post['published'])?$post['published']:'') . "<br />\n";
 echo "Tags: ";
 $tags = array();
 foreach ($post['tags'] as $tag)
